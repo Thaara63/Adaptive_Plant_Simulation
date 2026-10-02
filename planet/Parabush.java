@@ -8,8 +8,8 @@ import static planet.Radiation.NO_RADIATION;
 
 public class Parabush extends Plant {
     
-    public Parabush(String name, int nutrients, String type){
-        super(name,nutrients,"b");
+    public Parabush(String name, int nutrients){
+        super(name,nutrients);
     }
     
 

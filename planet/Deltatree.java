@@ -8,8 +8,8 @@ import static planet.Radiation.NO_RADIATION;
 
 public class Deltatree extends Plant {
     
-    public Deltatree(String name, int nutrients, String type){
-        super(name,nutrients,"d");
+    public Deltatree(String name, int nutrients){
+        super(name,nutrients);
     }
     
 

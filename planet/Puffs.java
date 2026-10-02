@@ -8,8 +8,8 @@ import static planet.Radiation.NO_RADIATION;
 
 public class Puffs extends Plant {
     
-    public Puffs(String name, int nutrients, String type){
-        super(name,nutrients,"p");
+    public Puffs(String name, int nutrients){
+        super(name,nutrients);
     }
     
     @Override

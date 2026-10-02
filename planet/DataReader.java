@@ -25,13 +25,13 @@ public class DataReader {
             String plantName =sc.next();
             switch(sc.next()){
                 case "p":
-                    plant = new Puffs(plantName,sc.nextInt(),"p");
+                    plant = new Puffs(plantName,sc.nextInt());
                     break;
                 case "d":
-                    plant = new Deltatree(plantName,sc.nextInt(),"d");
+                    plant = new Deltatree(plantName,sc.nextInt());
                     break;
                 case "b":
-                    plant = new Parabush(plantName,sc.nextInt(),"b");
+                    plant = new Parabush(plantName,sc.nextInt());
                     break;
                 default:
                     throw new IOException();
@@ -46,8 +46,8 @@ public class DataReader {
     public String toString(){
         String s = "";
         for(Plant p : plants){
-            s += p.name + " " + p.type + " " + p.nutrients +"\n" ;
+            s += p.name + " " + p.nutrients +"\n" ;
         }
-        return s;
+        return s + "num of days: " + numOfDays;
     }
 }
