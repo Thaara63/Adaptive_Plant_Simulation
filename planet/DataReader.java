@@ -9,10 +9,12 @@ import java.util.Scanner;
 
 
 public class DataReader {
-    private final ArrayList<Plant> plants;
+    private ArrayList<Plant> plants;
+    private int numOfDays;
     
     public DataReader(){
         plants = new ArrayList<>();
+        numOfDays = 0;
     }
     
     public void read(String filename) throws FileNotFoundException, IOException{
@@ -39,7 +41,19 @@ public class DataReader {
             plants.add(plant);
             
         }
-        int numOfDays = sc.nextInt();
+        this.numOfDays =sc.nextInt();
+    }
+    
+    public int getSize(){
+        return plants.size();
+    }
+    public int getNumOfDays(){
+        return numOfDays;
+    }
+    
+    public ArrayList<Plant> getPlants(){
+        ArrayList<Plant> plantsCopy = new ArrayList<>(plants);
+        return plantsCopy;
     }
     
     @Override

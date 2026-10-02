@@ -1,13 +1,14 @@
 package planet;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import static planet.Radiation.ALPHA;
 import static planet.Radiation.DELTA;
 import static planet.Radiation.NO_RADIATION;
-import java.io.IOException;
-import java.io.FileNotFoundException;
+
 
 public class Simulation {
-
+    
     public void simulate(String filename){
         //Getting the data
         DataReader data = new DataReader();
@@ -31,7 +32,7 @@ public class Simulation {
         }
         Radiation r = radiationOnNextDay(data);        
         
-        //simulation from day 2 to end
+        //simulation from days 2 to end
         for(int i = 1; i < (data.getNumOfDays()); i++){
             System.out.println("Day " + (i+1));
             System.out.println("Radiation: " + r);
@@ -51,8 +52,7 @@ public class Simulation {
         }
 
     }
-
-    //Decides the radiation on the next day
+    
     public Radiation radiationOnNextDay(DataReader data){
         int alphaSum = 0;
         int deltaSum = 0;
@@ -75,5 +75,4 @@ public class Simulation {
             return NO_RADIATION;
         }
     }
-    
 }

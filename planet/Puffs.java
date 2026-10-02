@@ -17,7 +17,10 @@ public class Puffs extends Plant {
         if(this.nutrients > 10){
             this.living = false;
         }
-        return this.living;
+        else{
+            this.living = true;
+        }
+        return living;
     }
 
     @Override
@@ -39,14 +42,16 @@ public class Puffs extends Plant {
     }
 
     @Override
-    protected HashMap<Radiation,Integer> radiationNeed(Radiation r) {
+    protected HashMap<Radiation,Integer> radiationNeed() {
         HashMap<Radiation,Integer> radiationDemand = new HashMap<>();
         int demand = 0;
-        if(r == ALPHA){
+        
+        if(living){
             demand = 10 - nutrients ;
-            radiationDemand.put(r,demand);
-        }else{
-            radiationDemand.put(r,demand);
+            radiationDemand.put(ALPHA,demand);            
+        }
+        else{
+            radiationDemand.put(ALPHA,demand);            
         }
         return radiationDemand;
     }

@@ -32,9 +32,9 @@ public class Parabush extends Plant {
     }
 
     @Override
-    protected HashMap<Radiation,Integer> radiationNeed(Radiation r) {
+    protected HashMap<Radiation,Integer> radiationNeed() {
         HashMap<Radiation,Integer> radiationDemand = new HashMap<>();
-        radiationDemand.put(r,0);
+//        radiationDemand.put(,0);
         return radiationDemand;
     }
 }

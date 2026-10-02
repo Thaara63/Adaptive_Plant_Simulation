@@ -20,7 +20,7 @@ public class Deltatree extends Plant {
         }
         else switch (r) {
             case ALPHA:
-                nutrients -=3 ;
+                nutrients -=3;
                 break;
             case DELTA:
                 nutrients += 4;
@@ -32,22 +32,23 @@ public class Deltatree extends Plant {
     }
 
     @Override
-    protected HashMap<Radiation,Integer> radiationNeed(Radiation r) {
+    protected HashMap<Radiation,Integer> radiationNeed() {
         HashMap<Radiation,Integer> radiationDemand = new HashMap<>();
         int demand = 0;
-        if(r == DELTA){
+        if(living){
             if(nutrients < 5){
                 demand += 4 ;
-                radiationDemand.put(r,demand);
-            }
+                radiationDemand.put(DELTA,demand);
+                }
             else if(nutrients >= 5 && nutrients <= 10){
                 demand += 1 ;
-                radiationDemand.put(r,demand);
-            }    
-        }else{
-            radiationDemand.put(r,demand);
+                radiationDemand.put(DELTA,demand);
+            }            
         }
-        
+        else{
+            radiationDemand.put(DELTA,demand);
+        }
+ 
         return radiationDemand;
     }
 }
