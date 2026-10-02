@@ -3,9 +3,11 @@ package planet;
 import static planet.Radiation.ALPHA;
 import static planet.Radiation.DELTA;
 import static planet.Radiation.NO_RADIATION;
+import java.io.IOException;
+import java.io.FileNotFoundException;
 
 public class Simulation {
-    
+
     public void simulate(String filename){
         //Getting the data
         DataReader data = new DataReader();
